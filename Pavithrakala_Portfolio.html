@@ -10,10 +10,192 @@
     *{box-sizing:border-box}
     html,body{height:100%}
     body{font-family:Inter,system-ui,Segoe UI,Helvetica,Arial; margin:0; background:linear-gradient(180deg,#071027 0%, #041021 100%); color:#e6eef6; -webkit-font-smoothing:antialiased}
+    .wrap{max-width:1100px;margin:28px auto;padding:22px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .avatar{width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#021018;box-shadow:0 6px 18px rgba(13,15,23,0.6)}
+    h1{font-size:22px;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:10px;border-radius:10px}
+    nav a:hover{background:var(--glass);color:#fff}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:26px;margin-top:22px}
+    @media (max-width:920px){.grid{grid-template-columns:1fr}header{flex-direction:column;align-items:flex-start}.avatar{width:64px;height:64px}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:20px}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .subtitle{color:var(--muted);font-size:13px}
+
+    .hero{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .hero-left{max-width:640px}
+    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-weight:600;margin-bottom:12px}
+    .name{font-size:28px;margin:6px 0}
+    .tagline{color:#dbeefe;line-height:1.5}
+    .cta{display:flex;gap:12px;margin-top:16px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#021018;font-weight:700;text-decoration:none;box-shadow:0 8px 30px rgba(6,182,212,0.08)}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+
+    .projects .project{border-radius:12px;padding:14px;margin-bottom:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));border:1px solid rgba(255,255,255,0.02);}
+    .project h4{margin:0 0 8px}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+
+    .right .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+    .small{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:28px;color:var(--muted);text-align:center;font-size:13px}
+
+    /* animations */
+    .reveal{animation:fadeUp .7s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+    /* resume download */
+    .download{display:inline-flex;align-items:center;gap:8px}
+
   </style>
 </head>
 <body>
-  <h1>Pavithrakala N — Portfolio</h1>
-  <p>Your professional portfolio website is ready!</p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="avatar">PN</div>
+        <div>
+          <h1>Pavithrakala N</h1>
+          <p class="lead">Electronics & Communication Engineer — Embedded Systems · VLSI · HSPICE</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card hero reveal" id="about">
+          <div class="hero">
+            <div class="hero-left">
+              <div class="kicker">Final-year ECE Student</div>
+              <div class="name">Pavithrakala N</div>
+              <div class="tagline">I design and simulate memory sense amplifiers using CNFETs, build embedded systems with ARM microcontrollers, and create practical safety devices for real-world problems. I combine circuit-level design with system-level software to build efficient hardware-software solutions.</div>
+              <div class="cta">
+                <a class="btn" href="mailto:pavithrakalan050604@gmail.com?subject=Opportunity">Hire / Contact</a>
+                <a class="btn ghost" href="#projects">See Projects</a>
+                <a class="btn ghost download" href="Pavithrakala_Resume.pdf" download>Download CV</a>
+              </div>
+            </div>
+            <div style="max-width:220px">
+              <div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:14px;padding:14px;text-align:center;box-shadow:0 18px 40px rgba(6,182,212,0.06)">
+                <div style="font-size:28px;font-weight:800;color:#021018">PN</div>
+                <div style="margin-top:8px;color:var(--muted);font-size:13px">Puducherry, India</div>
+                <div style="margin-top:12px">
+                  <div style="font-weight:700;color:#021018">B.Tech — ECE</div>
+                  <div style="color:var(--muted);font-size:13px">Sri Manakula Vinayagar Engineering College (2021–2025)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card projects reveal" id="projects" style="margin-top:18px">
+          <div class="section-title"><h3>Selected Projects</h3><span class="subtitle">Academic & practical</span></div>
+
+          <div class="project">
+            <h4>CNFET Sense Amplifier for SRAM</h4>
+            <p>Final-year project using Carbon Nanotube FETs to increase speed and reduce power for SRAM sense amplifiers. Performed HSPICE simulations and layout-area estimation.</p>
+          </div>
+
+          <div class="project">
+            <h4>Automatic Car Control (ARM Cortex-M3)</h4>
+            <p>Implemented collision-avoidance and adaptive cruise functionality using ultrasonic sensors and LPC1768 microcontroller.</p>
+          </div>
+
+          <div class="project">
+            <h4>Wearable Hazardous Gas Detection</h4>
+            <p>Wearable system for continuous monitoring in septic environments using MQ-series gas sensors to protect workers from toxic gases.</p>
+          </div>
+
+        </section>
+
+        <section class="card reveal" id="skills" style="margin-top:18px">
+          <div class="section-title"><h3>Skills</h3><span class="subtitle">Technical & soft</span></div>
+          <div class="skills">
+            <span class="skill">C</span>
+            <span class="skill">Java</span>
+            <span class="skill">HSPICE</span>
+            <span class="skill">MATLAB</span>
+            <span class="skill">AutoCAD</span>
+            <span class="skill">Figma</span>
+            <span class="skill">Linux</span>
+            <span class="skill">AWS</span>
+            <span class="skill">Excel & PPT</span>
+            <span class="skill">Embedded Systems</span>
+            <span class="skill">Circuit Design</span>
+            <span class="skill">Communication</span>
+          </div>
+        </section>
+
+        <section class="card reveal" style="margin-top:18px">
+          <div class="section-title"><h3>Achievements</h3><span class="subtitle">Recognition & certificates</span></div>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>WIPRO TalentNext Certification — Completed</li>
+            <li>AWS Cloud Certification — Completed</li>
+            <li>2nd Prize, Paper Presentation (PTU)</li>
+            <li>1st Place, WEBSITICA at Invente'23 (SSN)</li>
+            <li>AICTE – EduSkills: Data Analytics Process Automation (Accenture Virtual Internship)</li>
+          </ul>
+        </section>
+
+      </main>
+
+      <aside class="right">
+        <div class="card reveal">
+          <div class="section-title"><h3>Contact</h3><span class="subtitle">Reach out</span></div>
+          <div class="row"><div class="small">Email</div><div class="small">pavithrakalan050604@gmail.com</div></div>
+          <div class="row"><div class="small">Phone</div><div class="small">+91-6374573224</div></div>
+          <div class="row"><div class="small">LinkedIn</div><div class="small"><a href="https://www.linkedin.com/in/pavithrakala-nedunchezheyan-406278227/" target="_blank" style="color:var(--muted);text-decoration:none">linkedin.com/in/pavithrakala-nedunchezheyan</a></div></div>
+
+          <div style="margin-top:12px">
+            <div class="small">Languages</div>
+            <div style="margin-top:8px" class="skills">
+              <span class="skill">Tamil</span>
+              <span class="skill">English</span>
+              <span class="skill">French (A1)</span>
+              <span class="skill">Telugu</span>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="small">Education</div>
+            <div style="margin-top:8px;color:var(--muted)"><strong>Sri Manakula Vinayagar Engg. College</strong><br>B.Tech — ECE (2021-2025) — CGPA: 8.32</div>
+          </div>
+
+          <div style="margin-top:16px;display:flex;gap:10px;flex-direction:column">
+            <a class="btn" href="mailto:pavithrakalan050604@gmail.com?subject=Opportunity">Email Me</a>
+            <a class="btn ghost" href="#contact">Contact Section</a>
+          </div>
+        </div>
+
+        <div class="card reveal" style="margin-top:16px">
+          <div class="section-title"><h3>Quick CV</h3><span class="subtitle">Snapshot</span></div>
+          <p style="color:var(--muted);margin:0">ECE student with hands-on experience in embedded systems, CNFET-based circuit simulation, and cloud basics. Seeking internships or entry roles in VLSI, hardware design, and embedded firmware.</p>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>
+      <div style="margin-bottom:8px">Need changes? I can add animations, a portfolio gallery, or turn this into a deploy-ready React app.</div>
+      <div>© Pavithrakala N — Built with care</div>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'})})})
+  </script>
 </body>
 </html>
